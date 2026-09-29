@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tapstar – NFC Google review cards</title>
+<meta name="description" content="NFC review cards that send customers straight to your Google review page.">
+<meta property="og:title" content="Tapstar – NFC Google review cards"><meta property="og:type" content="website">
+<meta property="og:description" content="One tap. One more Google review.">
+<meta name="theme-color" content="#0F1B2D">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tapstar","url":"https://yourusername.github.io/","description":"NFC Google review cards"}</script>
+<style>
+:root{--bg:#F6F7F4;--ink:#0F1B2D;--mute:#56627A;--card:#fff;--line:#DDE2EA;--blue:#2F5BFF;--gold:#F4B400;--mint:#12A07A;--dark:#0F1B2D;--darkt:#F6F7F4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A121F;--ink:#EEF1F6;--mute:#9AA6BD;--card:#121D31;--line:#243250;--blue:#6C8CFF;--dark:#050A14;--darkt:#EEF1F6}}
+:root[data-theme="dark"]{--bg:#0A121F;--ink:#EEF1F6;--mute:#9AA6BD;--card:#121D31;--line:#243250;--blue:#6C8CFF;--dark:#050A14;--darkt:#EEF1F6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 'Instrument Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}.w{max-width:1120px;margin:auto;padding:0 22px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.bar{background:var(--gold);color:#2a1d00;text-align:center;font-weight:600;font-size:14.5px;padding:9px 14px}
+.bar b{font-variant-numeric:tabular-nums;background:#2a1d00;color:#ffd45c;border-radius:6px;padding:2px 8px;margin:0 4px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font:800 22px 'Bricolage Grotesque',sans-serif;text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--ink);display:grid;place-items:center;color:var(--gold);font-style:normal;font-size:15px}
+.links{display:flex;gap:22px;align-items:center;font-size:15px;font-weight:500}
+.links a{text-decoration:none;color:var(--mute)}.links a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;color:var(--mute);font:600 13px inherit;font-family:inherit;padding:5px 11px;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:600;text-decoration:none;padding:14px 26px;border-radius:14px;border:0;cursor:pointer;font-size:16px;font-family:inherit;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.o{background:none;color:inherit;border:1.5px solid var(--line)}
+.hero{padding:70px 0 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(42px,6.2vw,80px);font-weight:800}
+.hero p{font-size:19px;color:var(--mute);max-width:32em;margin:22px 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.trust{margin-top:30px;display:flex;gap:10px;align-items:center;font-size:14px;color:var(--mute)}.trust b{color:var(--gold);letter-spacing:2px;font-size:18px}
+.scene{position:relative;height:440px;max-width:460px;width:100%;justify-self:center}
+.nfc{position:absolute;left:0;bottom:30px;width:340px;height:210px;border-radius:22px;background:linear-gradient(140deg,#16264A,#0F1B2D 60%,#1d3a7a);box-shadow:0 30px 60px -20px rgba(15,27,45,.55);padding:22px;color:#fff;transform:rotate(-6deg)}
+.nfc small{opacity:.7;font-size:13px}.nfc strong{display:block;font:800 26px/1.1 'Bricolage Grotesque';margin-top:6px}
+.nfc .st{position:absolute;bottom:20px;left:22px;color:var(--gold);letter-spacing:4px;font-size:20px}
+.nfc svg{position:absolute;right:20px;top:20px;width:46px}
+.phone{position:absolute;right:0;top:0;width:210px;height:400px;border-radius:34px;background:#0b0f18;padding:9px;box-shadow:0 40px 70px -25px rgba(0,0,0,.5);animation:tap 7s ease-in-out infinite}
+.screen{height:100%;border-radius:26px;background:#fff;color:#111;padding:38px 16px 16px;position:relative;overflow:hidden;font-size:13px}
+.screen:before{content:"";position:absolute;top:10px;left:50%;width:64px;height:16px;margin-left:-32px;background:#0b0f18;border-radius:9px}
+.g{font:700 15px 'Bricolage Grotesque';display:flex;gap:6px;align-items:center}.g i{width:20px;height:20px;border-radius:50%;background:conic-gradient(#EA4335 0 25%,#FBBC05 0 50%,#34A853 0 75%,#4285F4 0)}
+.pop{position:absolute;inset:auto 0 0 0;background:#fff;border-radius:22px 22px 0 0;padding:18px 16px 22px;box-shadow:0 -10px 30px rgba(0,0,0,.15);animation:pop 7s infinite}
+.stars{display:flex;gap:4px;font-size:27px;margin:8px 0}.stars span{color:#d5d9e0;animation:fill 7s infinite}
+.stars span:nth-child(2){animation-delay:.12s}.stars span:nth-child(3){animation-delay:.24s}.stars span:nth-child(4){animation-delay:.36s}.stars span:nth-child(5){animation-delay:.48s}
+.ok{display:block;background:var(--blue);color:#fff;text-align:center;border-radius:99px;padding:9px;font-weight:600;margin-top:10px}
+.wave{position:absolute;left:150px;top:200px;width:60px;height:60px;border:3px solid var(--blue);border-radius:50%;opacity:0;animation:wave 7s infinite}.wave.b{animation-delay:.3s}
+@keyframes tap{0%,10%{transform:translate(50px,120px) rotate(10deg)}25%,80%{transform:translate(-30px,170px) rotate(-4deg)}100%{transform:translate(50px,120px) rotate(10deg)}}
+@keyframes wave{0%,24%{opacity:0;transform:scale(.4)}30%{opacity:.9}55%{opacity:0;transform:scale(3.2)}100%{opacity:0}}
+@keyframes pop{0%,32%{transform:translateY(105%)}42%,82%{transform:translateY(0)}92%,100%{transform:translateY(105%)}}
+@keyframes fill{0%,45%{color:#d5d9e0}52%,82%{color:var(--gold)}92%,100%{color:#d5d9e0}}
+.stats{border-block:1px solid var(--line);padding:34px 0}
+.stats .w{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:left}
+.stats b{display:block;font:800 clamp(30px,4vw,46px) 'Bricolage Grotesque';letter-spacing:-.02em}.stats span{color:var(--mute);font-size:15px}
+section{padding:90px 0}.h2{font-size:clamp(32px,4.4vw,54px);font-weight:800;max-width:14em}
+.sub{color:var(--mute);max-width:36em;margin:16px 0 0}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.feat i{font-style:normal;font-size:26px;display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:color-mix(in srgb,var(--blue) 14%,transparent)}
+.feat h3{font-size:21px;margin:18px 0 8px}.feat p{margin:0;color:var(--mute);font-size:15.5px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;counter-reset:s}
+.step{padding-right:22px;position:relative}
+.step:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);font:800 19px 'Bricolage Grotesque';position:relative;z-index:1}
+.step:after{content:"";position:absolute;top:22px;left:44px;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}.step:last-child:after{display:none}
+.step h3{font-size:22px;margin:20px 0 8px}.step p{margin:0;color:var(--mute);font-size:16px}
+.dark{background:var(--dark);color:var(--darkt)}.dark .sub{color:color-mix(in srgb,var(--darkt) 65%,transparent)}
+.promo{display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:linear-gradient(100deg,var(--gold),#ffd45c);color:#2a1d00;border-radius:20px;padding:20px 26px;margin-bottom:34px;font-weight:600}
+.promo b{font:800 24px 'Bricolage Grotesque'}.promo code{background:#2a1d00;color:#ffd45c;padding:5px 12px;border-radius:9px;font-size:17px;letter-spacing:.08em}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.plan{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;position:relative}
+.plan.hot{border:2px solid var(--blue);transform:translateY(-10px)}
+.plan .tag{position:absolute;top:-13px;left:26px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;padding:4px 13px;border-radius:99px}
+.plan h3{font-size:26px}.plan .pr{font:800 46px 'Bricolage Grotesque';margin:14px 0 2px}.plan .pr s{font:500 20px 'Instrument Sans';color:var(--mute);margin-left:8px}
+.plan ul{list-style:none;padding:0;margin:18px 0 26px;flex:1;color:var(--mute);font-size:16px}
+.plan li{padding:6px 0 6px 26px;position:relative}.plan li:before{content:"✓";position:absolute;left:0;color:var(--mint);font-weight:800}.plan .btn{text-align:center}
+.tests{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.test{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;margin:0}
+.test b{color:var(--gold);letter-spacing:3px}.test p{margin:12px 0 18px;font-size:17px}.test cite{font-style:normal;color:var(--mute);font-size:14.5px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+details{border-bottom:1px solid var(--line);padding:20px 0}summary{font:700 21px 'Bricolage Grotesque';cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary:after{content:"+";font-size:26px;line-height:1;transition:transform .2s}details[open] summary:after{transform:rotate(45deg)}details p{color:var(--mute);margin:12px 0 0}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;display:grid;gap:16px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+input,textarea,select{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+footer{background:var(--dark);color:var(--darkt);padding:60px 0 40px;font-size:15px}
+footer .g4{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+footer h4{margin:0 0 12px;font:800 16px 'Bricolage Grotesque'}footer a{display:block;text-decoration:none;opacity:.7;padding:3px 0}footer a:hover{opacity:1}
+footer p{opacity:.7;max-width:26em;margin:12px 0 0}.copy{margin-top:40px;padding-top:20px;border-top:1px solid #ffffff22;opacity:.6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.hero,.split{grid-template-columns:1fr}.hero{padding-top:40px}.steps,.plans,.tests{grid-template-columns:1fr;gap:34px}.feats,.stats .w{grid-template-columns:1fr 1fr}.step:after{display:none}.plan.hot{transform:none}.links a.h{display:none}section{padding:64px 0}footer .g4{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.phone{transform:translate(-30px,170px)}.pop{transform:none}.stars span{color:var(--gold)}}
+</style>
+</head>
+<body>
+<div class="bar"><span data-t="bar"></span> <b id="cd">--</b> <span data-t="barc"></span> <strong>TAP30</strong></div>
+<nav><div class="w"><a class="logo" href="#top"><i>★</i>Tapstar</a>
+<div class="links"><a class="h" href="#why" data-t="n1"></a><a class="h" href="#how" data-t="n2"></a><a class="h" href="#offers" data-t="n3"></a><a class="h" href="#faq" data-t="n4"></a><a class="h" href="#contact" data-t="n5"></a>
+<div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="fr">FR</button><button data-l="de">DE</button></div></div></div></nav>
+<main id="top">
+<div class="w hero"><div><h1 data-t="h1"></h1><p data-t="lead"></p>
+<div class="cta"><a class="btn" href="#offers" data-t="c1"></a><a class="btn o" href="#how" data-t="c2"></a></div>
+<div class="trust"><b>★★★★★</b><span data-t="trust"></span></div></div>
+<div class="scene" aria-hidden="true"><div class="nfc"><small>Café Lumière</small><strong data-t="card"></strong>
+<svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M14 34a14 14 0 0 1 0-20M22 30a8 8 0 0 1 0-12M30 26a3 3 0 0 1 0-4"/></svg><div class="st">★★★★★</div></div>
+<div class="wave"></div><div class="wave b"></div>
+<div class="phone"><div class="screen"><div class="g"><i></i>Café Lumière</div><p style="color:#666;margin:6px 0">Rate your visit</p>
+<div class="pop"><b>How was it?</b><div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><span style="color:#666">Great coffee, lovely team!</span><span class="ok">Post</span></div></div></div></div></div>
+
+<div class="stats"><div class="w">
+<div><b>+3.4×</b><span data-t="st1"></span></div><div><b>15 s</b><span data-t="st2"></span></div><div><b>0</b><span data-t="st3"></span></div><div><b>4.8★</b><span data-t="st4"></span></div></div></div>
+
+<section id="why"><div class="w"><h2 class="h2" data-t="wh"></h2><p class="sub" data-t="ws"></p>
+<div class="feats">
+<div class="feat"><i>📲</i><h3 data-t="f1h"></h3><p data-t="f1p"></p></div>
+<div class="feat"><i>🎨</i><h3 data-t="f2h"></h3><p data-t="f2p"></p></div>
+<div class="feat"><i>🔗</i><h3 data-t="f3h"></h3><p data-t="f3p"></p></div>
+<div class="feat"><i>🛡️</i><h3 data-t="f4h"></h3><p data-t="f4p"></p></div></div></div></section>
+
+<section id="how" style="padding-top:0"><div class="w"><h2 class="h2" data-t="hh"></h2><p class="sub" data-t="hs"></p>
+<div class="steps">
+<div class="step"><h3 data-t="s1h"></h3><p data-t="s1p"></p></div><div class="step"><h3 data-t="s2h"></h3><p data-t="s2p"></p></div>
+<div class="step"><h3 data-t="s3h"></h3><p data-t="s3p"></p></div><div class="step"><h3 data-t="s4h"></h3><p data-t="s4p"></p></div></div></div></section>
+
+<section id="offers" class="dark"><div class="w">
+<div class="promo"><b data-t="pb"></b><span data-t="pt"></span><code>TAP30</code></div>
+<h2 class="h2" data-t="oh"></h2><p class="sub" data-t="os"></p>
+<div class="plans">
+<div class="plan"><h3>Starter</h3><div class="pr">€34<s>€49</s></div><span data-t="p1"></span><ul><li data-t="l5"></li><li data-t="l0"></li><li data-t="l1"></li></ul><a class="btn o" href="#contact" data-t="ord"></a></div>
+<div class="plan hot"><span class="tag" data-t="best"></span><h3>Pro</h3><div class="pr">€83<s>€119</s></div><span data-t="p2"></span><ul><li data-t="l15"></li><li data-t="l0"></li><li data-t="l2"></li><li data-t="l3"></li></ul><a class="btn" href="#contact" data-t="ord"></a></div>
+<div class="plan"><h3>Business</h3><div class="pr">€209<s>€299</s></div><span data-t="p3"></span><ul><li data-t="l50"></li><li data-t="l0"></li><li data-t="l2"></li><li data-t="l4"></li></ul><a class="btn o" href="#contact" data-t="ord"></a></div></div></div></section>
+
+<section><div class="w"><h2 class="h2" data-t="th"></h2>
+<div class="tests">
+<figure class="test"><b>★★★★★</b><p data-t="t1"></p>Marie L. · Café Lumière</figure>
+<figure class="test"><b>★★★★★</b><p data-t="t2"></p>Jonas K. · Salon Haarwerk</figure>
+<figure class="test"><b>★★★★★</b><p data-t="t3"></p>Sofia R. · Trattoria Nonna</figure></div></div></section>
+
+<section id="faq" style="padding-top:0"><div class="w split"><div>
+<h2 class="h2" data-t="fh"></h2>
+<details><summary data-t="q1"></summary><p data-t="a1"></p></details>
+<details><summary data-t="q2"></summary><p data-t="a2"></p></details>
+<details><summary data-t="q3"></summary><p data-t="a3"></p></details>
+<details><summary data-t="q4"></summary><p data-t="a4"></p></details></div>
+<div id="contact"><h2 class="h2" data-t="kh" style="margin-bottom:22px"></h2>
+<form id="f"><label><span data-t="fn"></span><input name="n" required autocomplete="name"></label>
+<label><span data-t="fe"></span><input name="e" type="email" required autocomplete="email"></label>
+<label><span data-t="fp"></span><select name="p"><option>Starter</option><option selected>Pro</option><option>Business</option></select></label>
+<label><span data-t="fm"></span><textarea name="m"></textarea></label>
+<button class="btn" type="submit" data-t="fs"></button></form></div></div></section>
+</main>
+
+<footer><div class="w"><div class="g4">
+<div><div class="logo"><i>★</i>Tapstar</div><p data-t="fd"></p></div>
+<div><h4 data-t="fa"></h4><a href="#why" data-t="n1"></a><a href="#how" data-t="n2"></a><a href="#offers" data-t="n3"></a></div>
+<div><h4 data-t="fb"></h4><a href="#faq" data-t="n4"></a><a href="#contact" data-t="n5"></a></div>
+<div><h4 data-t="fc"></h4><a href="#" data-t="lg1"></a><a href="#" data-t="lg2"></a><a href="#" data-t="lg3"></a></div></div>
+<div class="copy"><span>© 2026 Tapstar</span><span data-t="foot"></span></div></div></footer>
+
+<script>
+const EMAIL="hello@yourdomain.com",END=new Date("2026-12-31T23:59:59");
+const D={
+en:{bar:"Launch offer ends in",barc:"– use code",n1:"Why NFC",n2:"How it works",n3:"Offers",n4:"FAQ",n5:"Contact",
+h1:"One tap. One more Google review.",lead:"NFC review cards send your customers straight to your Google review page. No searching, no typing your name, no excuses.",c1:"See the launch offer",c2:"How it works",trust:"Trusted by 1,200+ local businesses",card:"Tap to review us on Google",
+st1:"more reviews on average",st2:"to leave a review",st3:"apps to install",st4:"average rating of our clients",
+wh:"Reviews are the new shop window",ws:"Most happy customers never leave a review because it takes too many steps. We remove all of them.",
+f1h:"Tap, don't search",f1p:"Works with recent iPhones and Android phones. No app, no scanning.",f2h:"Made for your brand",f2p:"Your logo, your colours, printed on premium cards.",f3h:"QR backup included",f3p:"Older phone? The QR code opens the same review page.",f4h:"Honest by design",f4p:"Every customer reaches the same form. No review gating, fully Google-compliant.",
+hh:"From counter to 5 stars in four steps",hs:"Set up in five minutes. Your customers only need the Google account they already have.",
+s1h:"Send your Google link",s1p:"Share your business name or Maps link. We program every card.",s2h:"Receive your cards",s2p:"Branded NFC cards arrive in 3 to 5 days.",s3h:"Place them",s3p:"Put one on the till, table or reception desk and ask happy customers to tap.",s4h:"Watch reviews grow",s4p:"The review form opens instantly. Done in 15 seconds.",
+pb:"Launch offer: 30% off",pt:"Use this code at checkout until 31 December:",oh:"Choose your card pack",os:"Every pack includes NFC and QR programming, free shipping in Europe and a 30-day money-back guarantee.",
+p1:"For a single shop",p2:"For restaurants and salons",p3:"For chains and agencies",l5:"5 NFC cards",l15:"15 NFC cards",l50:"50 NFC cards",l0:"Custom logo and colours",l1:"Standard shipping",l2:"Express shipping",l3:"Free table stand",l4:"Multi-location support",ord:"Order now",best:"Most popular",
+th:"Loved by local businesses",t1:"We went from 40 to 190 reviews in three months. The card at the till does all the work.",t2:"Clients tap while paying. Our Google rating went from 4.2 to 4.8.",t3:"Simple, elegant, and staff love it. Set up took one afternoon.",
+fh:"Questions we hear often",q1:"Does it work with every phone?",a1:"Recent iPhones and nearly all Android phones read NFC. The QR code covers the rest.",q2:"Do customers need an app?",a2:"No. Tapping opens your Google review page in the browser.",q3:"Can I change the link later?",a3:"Yes. Send a new link and we reprogram the card or replace it free of charge.",q4:"Is it allowed by Google?",a4:"Asking for honest reviews is fine. Never reward reviews or filter out negative ones.",
+kh:"Order or ask a question",fn:"Your name",fe:"Email",fp:"Pack",fm:"Business name and Google Maps link",fs:"Send request",
+fd:"NFC review cards for local businesses.",fa:"Product",fb:"Support",fc:"Legal",lg1:"Imprint",lg2:"Privacy",lg3:"Terms",foot:"Made for local businesses"},
+fr:{bar:"L'offre de lancement se termine dans",barc:"– code",n1:"Pourquoi le NFC",n2:"Comment ça marche",n3:"Offres",n4:"FAQ",n5:"Contact",
+h1:"Un contact. Un avis Google de plus.",lead:"Les cartes NFC envoient vos clients directement sur votre page d'avis Google. Plus de recherche, plus d'excuses.",c1:"Voir l'offre de lancement",c2:"Comment ça marche",trust:"Plus de 1 200 commerces nous font confiance",card:"Approchez pour nous noter sur Google",
+st1:"d'avis en plus en moyenne",st2:"pour laisser un avis",st3:"appli à installer",st4:"note moyenne de nos clients",
+wh:"Les avis sont la nouvelle vitrine",ws:"La plupart des clients satisfaits ne laissent pas d'avis, car il y a trop d'étapes. Nous les supprimons toutes.",
+f1h:"Approchez, ne cherchez pas",f1p:"Compatible avec les iPhone récents et les Android. Ni appli, ni scan.",f2h:"À l'image de votre marque",f2p:"Votre logo, vos couleurs, sur des cartes haut de gamme.",f3h:"QR code de secours",f3p:"Téléphone ancien ? Le QR code ouvre la même page d'avis.",f4h:"Honnête par conception",f4p:"Chaque client arrive sur le même formulaire. Aucun tri des avis, conforme à Google.",
+hh:"Du comptoir aux 5 étoiles en quatre étapes",hs:"Installation en cinq minutes. Vos clients n'ont besoin que de leur compte Google.",
+s1h:"Envoyez votre lien Google",s1p:"Donnez le nom de votre commerce ou votre lien Maps. Nous programmons chaque carte.",s2h:"Recevez vos cartes",s2p:"Cartes NFC à votre image livrées en 3 à 5 jours.",s3h:"Posez-les",s3p:"Une sur la caisse, la table ou l'accueil. Proposez-la aux clients satisfaits.",s4h:"Regardez les avis grimper",s4p:"Le formulaire d'avis s'ouvre aussitôt. 15 secondes suffisent.",
+pb:"Offre de lancement : -30 %",pt:"Utilisez ce code à la commande jusqu'au 31 décembre :",oh:"Choisissez votre pack",os:"Chaque pack inclut la programmation NFC et QR, la livraison gratuite en Europe et 30 jours satisfait ou remboursé.",
+p1:"Pour un seul commerce",p2:"Pour restaurants et salons",p3:"Pour chaînes et agences",l5:"5 cartes NFC",l15:"15 cartes NFC",l50:"50 cartes NFC",l0:"Logo et couleurs personnalisés",l1:"Livraison standard",l2:"Livraison express",l3:"Support de table offert",l4:"Gestion multi-sites",ord:"Commander",best:"Le plus choisi",
+th:"Adopté par les commerces locaux",t1:"Nous sommes passés de 40 à 190 avis en trois mois. La carte à la caisse fait tout le travail.",t2:"Les clients approchent leur téléphone en payant. Notre note Google est passée de 4,2 à 4,8.",t3:"Simple, élégant, et l'équipe adore. L'installation a pris un après-midi.",
+fh:"Vos questions fréquentes",q1:"Ça marche sur tous les téléphones ?",a1:"Les iPhone récents et presque tous les Android lisent le NFC. Le QR code couvre le reste.",q2:"Le client doit-il installer une appli ?",a2:"Non. Le contact ouvre votre page d'avis Google dans le navigateur.",q3:"Puis-je changer le lien plus tard ?",a3:"Oui. Envoyez le nouveau lien, nous reprogrammons la carte ou la remplaçons gratuitement.",q4:"Est-ce autorisé par Google ?",a4:"Demander des avis honnêtes est permis. N'offrez jamais de récompense et ne filtrez pas les avis négatifs.",
+kh:"Commander ou poser une question",fn:"Votre nom",fe:"E-mail",fp:"Pack",fm:"Nom du commerce et lien Google Maps",fs:"Envoyer la demande",
+fd:"Cartes d'avis NFC pour commerces locaux.",fa:"Produit",fb:"Support",fc:"Mentions",lg1:"Mentions légales",lg2:"Confidentialité",lg3:"Conditions",foot:"Conçu pour les commerces locaux"},
+de:{bar:"Das Startangebot endet in",barc:"– Code",n1:"Warum NFC",n2:"So funktioniert's",n3:"Angebote",n4:"FAQ",n5:"Kontakt",
+h1:"Ein Tipp. Eine Google-Bewertung mehr.",lead:"NFC-Bewertungskarten führen Ihre Kunden direkt zu Ihrer Google-Bewertungsseite. Kein Suchen, keine Ausreden.",c1:"Startangebot ansehen",c2:"So funktioniert's",trust:"Über 1.200 lokale Betriebe vertrauen uns",card:"Antippen und auf Google bewerten",
+st1:"mehr Bewertungen im Schnitt",st2:"für eine Bewertung",st3:"Apps zu installieren",st4:"Durchschnittsnote unserer Kunden",
+wh:"Bewertungen sind das neue Schaufenster",ws:"Die meisten zufriedenen Kunden bewerten nie, weil es zu viele Schritte sind. Wir streichen sie alle.",
+f1h:"Antippen statt suchen",f1p:"Funktioniert mit aktuellen iPhones und Android-Geräten. Keine App, kein Scannen.",f2h:"Ganz in Ihrem Design",f2p:"Ihr Logo, Ihre Farben, auf hochwertigen Karten.",f3h:"QR-Code als Reserve",f3p:"Älteres Handy? Der QR-Code öffnet dieselbe Bewertungsseite.",f4h:"Ehrlich by Design",f4p:"Jeder Kunde landet im selben Formular. Kein Review-Gating, konform mit Google.",
+hh:"Vom Tresen zu 5 Sternen in vier Schritten",hs:"In fünf Minuten startklar. Ihre Kunden brauchen nur ihr vorhandenes Google-Konto.",
+s1h:"Google-Link senden",s1p:"Nennen Sie Firmennamen oder Maps-Link. Wir programmieren jede Karte.",s2h:"Karten erhalten",s2p:"NFC-Karten in Ihrem Design kommen in 3 bis 5 Tagen an.",s3h:"Platzieren",s3p:"Eine an Kasse, Tisch oder Rezeption. Fragen Sie zufriedene Kunden.",s4h:"Bewertungen wachsen sehen",s4p:"Das Bewertungsformular öffnet sich sofort. In 15 Sekunden erledigt.",
+pb:"Startangebot: 30 % Rabatt",pt:"Code an der Kasse eingeben, gültig bis 31. Dezember:",oh:"Wählen Sie Ihr Kartenpaket",os:"Jedes Paket enthält NFC- und QR-Programmierung, kostenlosen Versand in Europa und 30 Tage Geld-zurück-Garantie.",
+p1:"Für ein einzelnes Geschäft",p2:"Für Restaurants und Salons",p3:"Für Ketten und Agenturen",l5:"5 NFC-Karten",l15:"15 NFC-Karten",l50:"50 NFC-Karten",l0:"Eigenes Logo und Farben",l1:"Standardversand",l2:"Expressversand",l3:"Tischaufsteller gratis",l4:"Mehrere Standorte",ord:"Jetzt bestellen",best:"Am beliebtesten",
+th:"Beliebt bei lokalen Betrieben",t1:"Wir sind in drei Monaten von 40 auf 190 Bewertungen gekommen. Die Karte an der Kasse erledigt alles.",t2:"Kunden tippen beim Bezahlen. Unsere Google-Note stieg von 4,2 auf 4,8.",t3:"Einfach, elegant, und das Team liebt es. Die Einrichtung dauerte einen Nachmittag.",
+fh:"Häufige Fragen",q1:"Funktioniert das mit jedem Handy?",a1:"Aktuelle iPhones und fast alle Android-Geräte lesen NFC. Der QR-Code deckt den Rest ab.",q2:"Brauchen Kunden eine App?",a2:"Nein. Das Antippen öffnet Ihre Google-Bewertungsseite im Browser.",q3:"Kann ich den Link später ändern?",a3:"Ja. Senden Sie den neuen Link, wir programmieren die Karte um oder ersetzen sie kostenlos.",q4:"Erlaubt Google das?",a4:"Ehrliche Bewertungen zu erbitten ist erlaubt. Belohnen Sie nie Bewertungen und filtern Sie keine negativen.",
+kh:"Bestellen oder Frage stellen",fn:"Ihr Name",fe:"E-Mail",fp:"Paket",fm:"Firmenname und Google-Maps-Link",fs:"Anfrage senden",
+fd:"NFC-Bewertungskarten für lokale Betriebe.",fa:"Produkt",fb:"Support",fc:"Rechtliches",lg1:"Impressum",lg2:"Datenschutz",lg3:"AGB",foot:"Gemacht für lokale Betriebe"}};
+let L="en";
+function set(l){L=l;document.documentElement.lang=l;document.querySelectorAll('[data-t]').forEach(e=>e.textContent=D[l][e.dataset.t]);
+document.querySelectorAll('[data-l]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+document.title="Tapstar – "+D[l].h1;try{localStorage.setItem('lang',l)}catch(e){}}
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>set(b.dataset.l));
+let l="";try{l=localStorage.getItem('lang')||''}catch(e){}
+if(!D[l]){const n=(navigator.language||'en').slice(0,2);l=D[n]?n:'en'}
+set(l);
+function tick(){let s=Math.max(0,Math.floor((END-new Date())/1000)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+document.getElementById('cd').textContent=d+"d "+h+"h "+m+"m"}
+tick();setInterval(tick,30000);
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const f=e.target,
+body=`Name: ${f.n.value}\nEmail: ${f.e.value}\nPack: ${f.p.value}\n\n${f.m.value}`;
+location.href=`mailto:${EMAIL}?subject=${encodeURIComponent("Tapstar – "+f.p.value)}&body=${encodeURIComponent(body)}`};
+</script>
+</body>
+</html>
